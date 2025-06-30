@@ -1,0 +1,45 @@
+{% extends "cursosApp/inicio.html" %}
+
+{% block contenido %}
+<div class="d-flex flex-column min-vh-100">
+    <div class="card">
+    <br>
+<table class="table table-bordered table-
+striped">
+
+<thead>
+    <h3>Cursos Disponibles</h3>
+<tr>
+
+<th>Foto</th>
+<th>Nombre</th>
+<th>Carrera</th>
+<th>Turno</th>
+<th>Duracion en semanas</th>
+
+</tr>
+
+</thead>
+<tbody>
+{% for curso in cursos %}
+
+<tr>
+
+<td class="text-center">
+
+  <div style="text-align: center;">
+    <img src="{{curso.imagen.url}}" alt="" style="width: 300px; height: auto;">
+</div>
+</td>
+<td class="text-semibold">{{curso.nombre_curso}}</td>
+<td class="muted">{{curso.carrera}}</td>
+<td class="muted">{{curso.turno}}</td>
+<td class="muted">{{curso.num_semanas}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+</div>
+{%endblock%}
